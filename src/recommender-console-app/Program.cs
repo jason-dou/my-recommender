@@ -17,7 +17,7 @@ var scopes = new[] { $"{settings.ResourceId}/.default" };
 var keyVaultUri = new Uri($"https://{settings.KeyVaultName}.vault.azure.net/");
 
 // Retrieve certificate from Azure Key Vault
-var credential = new AzurePowerShellCredential();
+var credential = new DefaultAzureCredential();
 var keyVaultClient = new SecretClient(keyVaultUri, credential);
 var secretResponse = await keyVaultClient.GetSecretAsync(settings.CertificateName);
 var keyVaultSecret = secretResponse?.Value;
