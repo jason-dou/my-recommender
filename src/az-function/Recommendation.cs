@@ -23,6 +23,7 @@ namespace My.Function
         [FunctionName("recommendation")]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
+            [Blob("recommendation/movies.pred.tsv", FileAccess.Read)] Stream predBlob,
             ILogger log, ExecutionContext context)
         {
             log.LogInformation("Processing a request for recommendation");
@@ -35,7 +36,7 @@ namespace My.Function
 
                     // Read the TSV file into a list of dictionaries
                     List<Dictionary<string, string>> data = new List<Dictionary<string, string>>();
-                    using (StreamReader reader = new StreamReader(path))
+                    using (StreamReader reader = new StreamReader(predBlob))
                     {
                         string[] headers = reader.ReadLine().Split('\t');
                         while (!reader.EndOfStream)
