@@ -19,7 +19,7 @@ steps:
     inputs:
       command: publish
       arguments: "--configuration Release --output publish_output"
-      projects: "*az-function.csproj"
+      projects: "**/az-function.csproj"
       publishWebProjects: false
       modifyOutputPath: false
       zipAfterPublish: false
