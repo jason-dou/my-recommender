@@ -38,5 +38,5 @@ steps:
       azureSubscription: "MyServiceConnection"
       appType: functionAppLinux # default is functionApp
       appName: "fnapp-y3ac2abjvi3wq"
-      package: $(System.ArtifactsDirectory)/**/*.zip
+      package: $(System.DefaultWorkingDirectory)/**/*.zip
       runtimeStack: "DOTNET|6.0"
