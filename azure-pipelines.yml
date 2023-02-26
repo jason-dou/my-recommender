@@ -34,7 +34,7 @@ steps:
       artifactName: "drop"
   - task: AzureFunctionApp@1 # Add this at the end of your file
     inputs:
-      azureSubscription: "MyStudentSubscription"
+      azureSubscription: "MyServiceConnection"
       appType: functionAppLinux # default is functionApp
       appName: "fnapp-y3ac2abjvi3wq"
       package: $(System.ArtifactsDirectory)/**/*.zip
