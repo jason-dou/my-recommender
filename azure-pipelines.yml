@@ -11,9 +11,10 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-  - script: |
-      dotnet restore
-      dotnet build --configuration Release
+  - task: UseDotNet@2
+    inputs:
+      version: "6.0.x"
+      packageType: sdk
   - task: DotNetCoreCLI@2
     inputs:
       command: publish
@@ -38,3 +39,4 @@ steps:
       appType: functionAppLinux # default is functionApp
       appName: "fnapp-y3ac2abjvi3wq"
       package: $(System.ArtifactsDirectory)/**/*.zip
+      runtimeStack: "DOTNET|6.0"
