@@ -49,7 +49,7 @@ stages:
               runtimeStack: "DOTNET|6.0"
   - stage: Development
     displayName: "Development branch"
-    condition: ne(variables['Build.SourceBranch'], 'refs/heads/dev')
+    condition: ne(variables['Build.SourceBranch'], 'refs/heads/main')
     jobs:
       - job: DevJob
         displayName: "Development branch job"
