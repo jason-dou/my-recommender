@@ -68,5 +68,5 @@ stages:
           - task: DotNetCoreCLI@2
             inputs:
               command: "test"
-              projects: "**/azure-function-tests.csproj"
+              projects: "**/az-function-tests.csproj"
               arguments: "--configuration Release"
