@@ -32,8 +32,6 @@ namespace My.Function
                 var isAuthorized = await IsAuthorized(req, log);
                 if (isAuthorized)
                 {
-                    var path = System.IO.Path.Combine(context.FunctionAppDirectory, "movies.pred.tsv");
-
                     // Read the TSV file into a list of dictionaries
                     List<Dictionary<string, string>> data = new List<Dictionary<string, string>>();
                     using (StreamReader reader = new StreamReader(predBlob))
@@ -50,7 +48,6 @@ namespace My.Function
                                     var field = headers[i] == Constants.Columns.GENRES ? fields[i].Replace("\"", "") : fields[i];
                                     row.Add(headers[i], field);
                                 }
-
                             }
                             data.Add(row);
                         }
