@@ -20,7 +20,7 @@ var keyVaultUri = new Uri($"https://{settings.KeyVaultName}.vault.azure.net/");
 var credential = new DefaultAzureCredential();
 var keyVaultClient = new SecretClient(keyVaultUri, credential);
 var secretResponse = await keyVaultClient.GetSecretAsync(settings.CertificateName);
-var keyVaultSecret = secretResponse?.Value;
+var keyVaultSecret = secretResponse?.Value ?? throw new Exception($"Unable to retrieve secret {settings.CertificateName} from key vault {settings.KeyVaultName}");
 var privateKeyBytes = Convert.FromBase64String(keyVaultSecret.Value);
 var certificate = new X509Certificate2(privateKeyBytes);
 

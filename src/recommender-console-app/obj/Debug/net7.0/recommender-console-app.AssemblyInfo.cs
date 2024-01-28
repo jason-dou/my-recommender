@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("recommender-console-app")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+52f227fd0be7c09615b40329878c76c90f038793")]
 [assembly: System.Reflection.AssemblyProductAttribute("recommender-console-app")]
 [assembly: System.Reflection.AssemblyTitleAttribute("recommender-console-app")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
